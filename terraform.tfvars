@@ -1,9 +1,0 @@
-region             = "us-east-1"
-database_name      = "MSPayment"
-database_username  = ""
-database_password  = ""
-lab_role_arn       = "arn:aws:iam::650380094581:role/LabRole"
-input_sqs_url       = ""
-sqs_message_group    = "TC"
-sqs_polling_interval = "5000"
-secret_key_jwt_token = 
