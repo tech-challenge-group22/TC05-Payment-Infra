@@ -11,13 +11,6 @@ resource "aws_cloudwatch_log_group" "payment" {
 }
 
 /*====
-ECR repository to store our Docker images
-======*/
-resource "aws_ecr_repository" "payment_app" {
-  name = "${var.repository_name}"
-}
-
-/*====
 ECS cluster
 ======*/
 resource "aws_ecs_cluster" "cluster" {
@@ -32,7 +25,7 @@ resource "aws_ecs_task_definition" "web" {
   family                   = "${var.prefix}_web"
   # "${file("${path.module}/tasks/web_task_definition.json"
   container_definitions    = templatefile("${path.module}/tasks/web_task_definition.json", {
-    image           = "${aws_ecr_repository.payment_app.repository_url}"
+    image           = "${var.ecr_url}"
     db_username = "${var.database_username}"
     db_password = "${var.database_password}"
     db_host    = "${var.dbhost}"
