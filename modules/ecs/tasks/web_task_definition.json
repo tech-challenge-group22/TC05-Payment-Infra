@@ -53,11 +53,11 @@
       },
       {
         "name": "AWS_OUTPUT_PAYMENT_QUEUE_RECEIVED_URL",
-        "value": "${input_sqs_url}"
+        "value": "${payment_queue_received}"
       },
       {
         "name": "AWS_INPUT_PAYMENT_QUEUE_PROCESSED_URL",
-        "value": "${output_sqs_url}"
+        "value": "${payment_queue_processed}"
       },
       {
         "name": "MSG_POLLING_INTERVAL",

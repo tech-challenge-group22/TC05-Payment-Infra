@@ -22,7 +22,10 @@ variable "lab_role_arn" {
   description = "The lab role"
 }
 
-variable "input_sqs_url" {
+variable "payment_queue_received" {
+}
+
+variable "payment_queue_processed" {
 }
 
 variable "sqs_message_group" {

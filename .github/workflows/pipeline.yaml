@@ -18,7 +18,8 @@ jobs:
       TF_VAR_database_password: ${{ secrets.TF_VAR_database_password }}
       TF_VAR_sqs_polling_interval: ${{ vars.TF_VAR_SQS_POLLING_INTERVAL }}
       TF_VAR_sqs_message_group: ${{ vars.TF_VAR_SQS_MESSAGE_GROUP }}
-      TF_VAR_input_sqs_url: ${{ vars.TF_VAR_INPUT_SQS_URL }}
+      TF_VAR_payment_queue_processed: ${{ vars.TF_VAR_payment_queue_processed }}
+      TF_VAR_payment_queue_received: ${{ vars.TF_VAR_payment_queue_received }}
       TF_VAR_secret_key_jwt_token: ${{ secrets.TF_VAR_secret_key_jwt_token }}
     steps:
       - name: Checkout Repo

@@ -52,11 +52,11 @@ variable "rds_id" {
   description = "dbhost"
 }
 
-variable "output_sqs_url" {
+variable "payment_queue_processed" {
   description = "SQS Payment response"
 }
 
-variable input_sqs_url {
+variable payment_queue_received {
   description = "SQS url to receive events"
 }
 

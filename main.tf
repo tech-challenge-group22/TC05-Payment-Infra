@@ -43,10 +43,6 @@ module "rds" {
   ]
 }
 
-module sqs {
-  source = "./modules/sqs"
-}
-
 module "ecr" {
   source = "./modules/ecr"
 }
@@ -70,8 +66,8 @@ module "ecs" {
   dbhost              = "${module.rds.rds_address}"
   execution_arn_role  = "${var.lab_role_arn}"
   rds_id              = "${module.rds.rds_id}"
-  output_sqs_url       = "${module.sqs.output_sqs_url}"
-  input_sqs_url        = "${var.input_sqs_url}"
+  payment_queue_processed = "${var.payment_queue_processed}"
+  payment_queue_received        = "${var.payment_queue_received}"
   sqs_message_group    = "${var.sqs_message_group}"
   sqs_polling_interval = "${var.sqs_polling_interval}"
   secret_key_jwt_token = "${var.secret_key_jwt_token}"
