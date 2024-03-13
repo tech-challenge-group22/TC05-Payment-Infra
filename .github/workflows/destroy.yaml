@@ -47,8 +47,5 @@ jobs:
         - name: Terraform Destroy rds
           run: terraform destroy -target module.rds -auto-approve
   
-        - name: Terraform Destroy sqs
-          run: terraform destroy -target module.sqs -auto-approve
-  
         - name: Terraform Destroy networking
           run: terraform destroy -target module.networking -auto-approve
